@@ -20,7 +20,7 @@ async function createAlumni(req, res) {
         message: "Profile already exist",
       });
     }
-
+    
     const alumni = await alumniModel.create({
       userId,
       college,
