@@ -12,7 +12,7 @@ async function createStudentProfile(req, res) {
         message: "Profile already exist",
       });
     }
-
+    
     const student = await studentModel.create({
       user: userID,
       college,

@@ -23,10 +23,18 @@ async function createCollegeController(req, res) {
   }
 }
 
+
+
+
+
 // get all colleges
 async function getCollege(req, res) {
   try {
     const colleges = await collegeModel.find();
+    res.status(200).json({
+      message:"colleges fetched successfully",
+      colleges
+    })
   } catch (error) {
     res.status(500).json({
       message: "Error in fetching colleges",

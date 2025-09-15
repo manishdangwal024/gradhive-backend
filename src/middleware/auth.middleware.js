@@ -2,7 +2,7 @@ const jwt= require("jsonwebtoken")
 const userModel = require("../model/user.model");
 
 async function authMiddleware(req,res,next){
-    const {token}=req.token;
+    const {token}=req.cookies;
     if(!token){
         return res.status(401).json({
             message:"unauthorized user"

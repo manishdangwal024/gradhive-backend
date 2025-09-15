@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRouter);
 app.use("/api/college", collegeRouter);
-app.use("api/student", studentRouter);
+app.use("/api/student", studentRouter);
 app.use("/api/alumni",alumniRouter)
 
 module.exports = app;

@@ -20,9 +20,9 @@ async function createAlumni(req, res) {
         message: "Profile already exist",
       });
     }
-    
+
     const alumni = await alumniModel.create({
-      userId,
+      user: userId,
       college,
       graduationYear,
       currentCompany,
@@ -46,13 +46,13 @@ async function getAllAlumni(req, res) {
       .find()
       .populate("user", "fullName email role")
       .populate("college", "name location");
-      res.status(200).json(alumni)
+    res.status(200).json(alumni);
   } catch (error) {
     res.status(500).json({
-        message:"Error in fetching alumni",
-        error:error.message
-    })
+      message: "Error in fetching alumni",
+      error: error.message,
+    });
   }
 }
 
-module.exports = { createAlumni,getAllAlumni };
+module.exports = { createAlumni, getAllAlumni };
